@@ -1,7 +1,6 @@
 <hr />
 <?php 
 
-include("init.php");
 
 // $result_set = User::find_all_users();
 

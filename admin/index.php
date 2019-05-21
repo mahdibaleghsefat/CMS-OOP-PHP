@@ -1,4 +1,8 @@
+<?php require_once("includes/init.php"); ?>
+<?php if (!$session->is_signed_in()) {redirect("login.php");} ?>
 <?php include("includes/header.php"); ?>
+<!-- Navigation-->
+<?php include("includes/navigation.php"); ?>
 
   <div class="content-wrapper">
     <div class="container-fluid">

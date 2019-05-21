@@ -10,3 +10,7 @@ function __autoload($class) {
 		die("This is name {$class}.php was not man ... .");
 	}
 }
+
+function redirect($location) {
+	header("Location: {$location}");
+}

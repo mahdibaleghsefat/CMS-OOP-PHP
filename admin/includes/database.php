@@ -27,7 +27,7 @@ class Database {
 	}
 
 	public function escape_string($string){
-		$escape_string = mysql_real_escape_string($this->connection, $string);
+		$escape_string = mysqli_real_escape_string($this->connection, $string);
 		return $escape_string;
 	}
 

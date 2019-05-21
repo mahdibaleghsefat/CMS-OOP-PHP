@@ -1,5 +1,6 @@
 <?php 
 
-include("functions.php");
+require_once("functions.php");
 require_once("new_config.php");
-include("database.php");
+require_once("database.php");
+require_once("session.php");
