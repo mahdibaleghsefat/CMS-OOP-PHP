@@ -4,18 +4,18 @@
 
 $user = new User();
 
-// $user->username = "sdg";
+// $user->username = "prorbldokjfettrtn";
 // $user->password = "sdg";
 // $user->first_name = "sdg";
 // $user->last_name = "sdg";
 // $user->create();
 
-// $user = User::find_user_by_id(2);
-// $user->last_name = "lsdfjn lsjf";
+// $user = User::find_user_by_id(3);
+// $user->last_name = "alidostee";
 // $user->update();
 
-$user = User::find_user_by_id(4);
-$user->delete();
+// $user = User::find_user_by_id(5);
+// $user->delete();
 
 
 ?>
