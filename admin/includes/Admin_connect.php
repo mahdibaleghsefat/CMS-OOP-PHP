@@ -2,22 +2,12 @@
 <?php 
 
 
-// $result_set = User::find_all_users();
+$user = new User();
 
-// while ($row = mysqli_fetch_array($result_set)) {
-// 	echo $row['username'] . "<br>";
-// }
+$user->username = "sdg";
+$user->password = "sdg";
+$user->first_name = "sdg";
+$user->last_name = "sdg";
+$user->create();
 
-// $found_user = User::find_user_by_id(2);
-
-// $user = User::instantation($found_user);
-// echo $user->username;
-
-// $users = User::find_all_users();
-
-// foreach ($users as $user) {
-// 	echo $user->id . "<br />";
-// }
-
-$found_user = User::find_user_by_id(2);
-echo $found_user->username;
+?>
