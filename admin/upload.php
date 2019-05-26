@@ -1,19 +1,63 @@
 <?php include("includes/header.php"); ?>
+<?php if (!$session->is_signed_in()) {redirect("login.php");} ?>
 
-  <div class="content-wrapper">
+
+<?php 
+
+$message = "";
+
+if (isset($_POST['submit'])) {
+	$photo = new Photo();
+	$photo->title = $_POST['title'];
+	$photo->set_file($_FILES['file_upload']);
+
+	if ($photo->save()) {
+		$message = "photo uploaded successfully";
+		$photo->create();
+	} else {
+		$message = join("<br />", $photo->errors);
+	}
+}
+
+
+
+
+ ?>
+
+
+
+
+<div class="content-wrapper">
     <div class="container-fluid">
-      <h1 class="page-header">upload</h1>
-      <small>Subheading</small>
-      <!-- Breadcrumbs-->
-      <ol class="breadcrumb">
-        <li class="breadcrumb-item">
-          <a href="#">Dashboard</a>
-        </li>
-        <li class="breadcrumb-item active">My Dashboard</li>
-      </ol>
+      <h1 class="page-header">
+					UPLOAD
+					<small>Subheading</small>
+				</h1>
+
+		<div class="col-md-6">
+
+			<?php echo $message; ?>
+			
+			<form action="upload.php" method="post" enctype="multipart/form-data">
+				<div class="form-group">
+					<input type="text" name="title" class="form-control">
+				</div>
+				<div class="form-group">
+					<input type="file" name="file_upload">
+				</div>
+				<input type="submit" name="submit">
+			</form>
+		</div>      
 
     </div>
-    <!-- /.container-fluid-->
-    <!-- /.content-wrapper-->
+  </div>
+
+  	<!-- navigation -->
+
+	<?php include("includes/navigation.php"); ?>
+
+	<?php include("includes/side-nav.php"); ?>
+
+
 
 <?php include("includes/footer.php"); ?>
